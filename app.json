@@ -8,7 +8,12 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.muskulee.quranicwords"
+      "bundleIdentifier": "com.muskulee.quranicwords",
+      "entitlements": {
+        "com.apple.security.application-groups": [
+          "group.com.muskulee.quranicwords"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,7 +32,27 @@
       "expo-router",
       "expo-audio",
       "expo-sqlite",
-      "expo-localization"
+      "expo-localization",
+      "@bacons/apple-targets",
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "WordOfDay",
+              "label": "Word of the Day",
+              "description": "One Quran word and its meaning, every day",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "resizeMode": "horizontal|vertical",
+              "widgetCategory": "home_screen",
+              "updatePeriodMillis": 1800000
+            }
+          ]
+        }
+      ]
     ],
     "scheme": "quranicwords",
     "experiments": {
